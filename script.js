@@ -111,3 +111,5 @@ const gameOver = (status) => {
     };
     currentlyPlaying = false;
   };
+
+  startRound();
