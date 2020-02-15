@@ -12,6 +12,22 @@ let openDoor1;
 let openDoor2;
 let openDoor3;
 
+const isClicked = (door) => {
+    if (door.src === closedDoorPath) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+  
+  const playDoor = (door) => {
+    numClosedDoors--;
+    if (numClosedDoors === 0) {
+      gameOver('win');
+    } else if (isBot(door)) {
+      gameOver();
+    };
+  };
 
 doorImage1.onclick = () => {
     if (currentlyPlaying && !isClicked(doorImage1)) {
