@@ -15,6 +15,14 @@ let openDoor1;
 let openDoor2;
 let openDoor3;
 
+const isBot = (door) => {
+    if (door.src === botDoorPath) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
 const isClicked = (door) => {
     if (door.src === closedDoorPath) {
       return false;
