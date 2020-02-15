@@ -112,9 +112,3 @@ const gameOver = (status) => {
 };
 
 startRound();
-
-
-
-
-                      
-                  
