@@ -93,6 +93,16 @@ const randomChoreGenerator = () => {
     }
 };
 
+const startRound = () => {
+    numClosedDoors = 3;
+    doorImage1.src = closedDoorPath;
+    doorImage2.src = closedDoorPath;
+    doorImage3.src = closedDoorPath;
+    startButton.innerHTML = 'Good luck!';
+    currentlyPlaying = true;
+    randomChoreGenerator();
+  }
+
 const gameOver = (status) => {
     if (status === 'win') {
       startButton.innerHTML = 'You win! Play again?';
