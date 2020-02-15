@@ -14,13 +14,37 @@ let openDoor3;
 
 
 doorImage1.onclick = () => {
+    if (currentlyPlaying && !isClicked(doorImage1)) {
     doorImage1.src = openDoor1;
-};
-doorImage2.onclick = () => {
-    doorImage2.src = openDoor2;
-};
-doorImage3.onclick = () => {
-    doorImage3.src = openDoor3;
+    playDoor(doorImage1);
+    } else {
+      return true;
+    }
+  };
+  
+  doorImage2.onclick = () => {
+    if (currentlyPlaying && !isClicked(doorImage2)) {
+      doorImage2.src = openDoor2;
+    playDoor(doorImage2);
+    } else {
+      return true;
+    }
+  };
+  
+  doorImage3.onclick = () => {
+    if (currentlyPlaying && !isClicked(doorImage3)) {
+      doorImage3.src = openDoor3;
+    playDoor(doorImage3);
+    } else {
+      return true;
+    }
+  };
+
+if (numClosedDoors === 0) {
+    gameOver('win');
+  } else if (isBot(door)) {
+    gameOver();
+  };
 };
 
 const randomChoreGenerator = () => {
