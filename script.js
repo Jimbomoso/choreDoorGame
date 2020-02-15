@@ -83,3 +83,12 @@ const randomChoreGenerator = () => {
         openDoor3 = botDoorPath;
     }
 };
+
+const gameOver = (status) => {
+    if (status === 'win') {
+      startButton.innerHTML = 'You win! Play again?';
+    } else {
+      startButton.innerHTML = 'Game over! Play again?';
+    };
+    currentlyPlaying = false;
+  };
