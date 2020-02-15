@@ -10,6 +10,7 @@ const closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/cho
 
 
 let numClosedDoors = 3;
+let currentlyPlaying = true;
 
 let openDoor1;
 let openDoor2;
