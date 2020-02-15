@@ -3,6 +3,11 @@ body {
     margin: 0px;
 }
 
+header {
+    background: #00ffff;
+    text-align: center;
+  }
+
 .door-frame {
     cursor: pointer;
     padding: 10px;
