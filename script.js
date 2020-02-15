@@ -37,6 +37,24 @@ const playDoor = (door) => {
     };
 };
 
+const randomChoreGenerator = () => {
+    const choreDoor = Math.floor(Math.random() * numClosedDoors);
+    if (choreDoor === 0) {
+        openDoor1 = botDoorPath;
+        openDoor2 = beachDoorPath;
+        openDoor3 = spaceDoorPath;
+        return choreDoor;
+    } else if (choreDoor === 1) {
+        openDoor1 = spaceDoorPath;
+        openDoor2 = botDoorPath;
+        openDoor3 = beachDoorPath;
+    } else if (choreDoor === 2) {
+        openDoor1 = beachDoorPath;
+        openDoor2 = spaceDoorPath;
+        openDoor3 = botDoorPath;
+    }
+};
+
 doorImage1.onclick = () => {
     if (currentlyPlaying && !isClicked(doorImage1)) {
         doorImage1.src = openDoor1;
@@ -69,25 +87,8 @@ if (numClosedDoors === 0) {
 } else if (isBot(door)) {
     gameOver();
 };
-};
 
-const randomChoreGenerator = () => {
-    const choreDoor = Math.floor(Math.random() * numClosedDoors);
-    if (choreDoor === 0) {
-        openDoor1 = botDoorPath;
-        openDoor2 = beachDoorPath;
-        openDoor3 = spaceDoorPath;
-        return choreDoor;
-    } else if (choreDoor === 1) {
-        openDoor1 = spaceDoorPath;
-        openDoor2 = botDoorPath;
-        openDoor3 = beachDoorPath;
-    } else if (choreDoor === 2) {
-        openDoor1 = beachDoorPath;
-        openDoor2 = spaceDoorPath;
-        openDoor3 = botDoorPath;
-    }
-};
+
 
 const startRound = () => {
     numClosedDoors = 3;
