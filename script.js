@@ -88,7 +88,10 @@ if (numClosedDoors === 0) {
     gameOver();
 };
 
-
+startButton.onclick = () => {
+    if (currentlyPlaying === false) {    startRound();
+    };                              
+  };
 
 const startRound = () => {
     numClosedDoors = 3;
